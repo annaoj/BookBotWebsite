@@ -1,0 +1,54 @@
+.header-wrapper {
+	background-color: rgba(0,0,0,0.45);
+	position: relative;
+	padding: 65px 0px;
+}
+
+#header {
+
+    background:  url('../image/bg5.jpg') no-repeat center center;
+    background-attachment: fixed;
+    background-size: cover;
+    display: table;
+    height: calc(100vh - 72px);
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    overflow-x: hidden;
+}
+
+.header-wrapper .header-overlay {
+    min-height: 100vh;
+    /*min-width: 100vw;*/
+    opacity: 0.4;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.header-wrapper .header-wrapper-inner {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.header-wrapper .header-wrapper-inner .welcome-speech {
+	margin-top: 7em;
+}
+
+.header-wrapper .header-wrapper-inner .welcome-speech h1 {
+	color: #232c35;
+    font-size: 35px;
+    font-weight: 100;
+    letter-spacing: 6px;
+    margin-bottom: 12px;
+    margin-top: 0;
+    text-transform: uppercase;
+}
+
+.header-wrapper .header-wrapper-inner .welcome-speech p {
+	color: #232c35;
+    font-size: 14px;
+    letter-spacing: 3px;
+    margin-bottom: 4.2em;
+}
