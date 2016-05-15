@@ -1,3 +1,8 @@
+<?php
+require_once 'connect_test.php';
+$sql="SELECT * FROM books_for_sale WHERE sale_buy=sale";
+$sale_buy =$db->query($sql)
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -35,15 +40,15 @@
    <!-- Custom stylesheet - for your changes -->
    <link href="css/custom.css" rel="stylesheet">
    <script>
-   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-   ga('create', 'UA-77262857-1', 'auto');
-   ga('send', 'pageview');
+     ga('create', 'UA-77262857-1', 'auto');
+     ga('send', 'pageview');
 
- </script>
+   </script>
 </head>
 
 <body>
@@ -115,7 +120,7 @@ _________________________________________________________ -->
 
                               </li>
 
-                              <li class="dropdown active">
+                              <li class="dropdown">
                                   <a href="sellBook.html" class="dropdown-toggle" >Sell<b class="caret"></b></a>
                                   <ul class="dropdown-menu">
                                       <li><a href="index.html">Option 1: Default Page</a>
@@ -131,8 +136,8 @@ _________________________________________________________ -->
                                   </ul>
                               </li>
 
-                              <li class="dropdown">
-                                  <a href="buyBook.php" class="dropdown-toggle" >Buy<b class="caret"></b></a>
+                              <li class="dropdown active">
+                                  <a href="buyBook.html" class="dropdown-toggle" >Buy<b class="caret"></b></a>
                                   <ul class="dropdown-menu">
                                       <li><a href="index.html">Option 1: Default Page</a>
                                       </li>
@@ -198,13 +203,13 @@ _________________________________________________________ -->
       <div class="container">
           <div class="row">
               <div class="col-md-7">
-                  <h1>Sell</h1>
+                  <h1>Browse books </h1>
               </div>
               <div class="col-md-5">
                   <ul class="breadcrumb">
                       <li><a href="index.html">Home</a>
                       </li>
-                      <li>Sell</li>
+                      <li>Buy </li>
                   </ul>
 
               </div>
@@ -215,20 +220,220 @@ _________________________________________________________ -->
   <div id="content">
       <div class="container">
 
-          <section>
-              <div class="row">
-                  <div class="col-md-12">
 
-                      <div class="heading">
-                          <h2>What is Bookbot?</h2>
-                      </div>
+        <div class="row products">
+<?php while($product =mysqli_fetch_assoc($sale_buy)): ?>
+            <div class="col-md-3 col-sm-4">
+                <div class="product">
+                    <div class="image">
+                        <a href="product1.html">
+                            <img src="<?books_for_sale['image'];?>" alt="<?books_for_sale['title'];?>" class="img-responsive image1">
+                        </a>
+                    </div>
+                    <!-- /.image -->
+                    <div class="text">
+                        <h3><a href="product1.html"><?books_for_sale['title'];?></a></h3>
+                        <p class="price"><?books_for_sale['price'];?></p>
 
-                      <p class="lead">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean
-                          ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                    </div>
+                    <!-- /.text -->
+                </div>
+                <!-- /.product -->
+            </div>
 
-                  </div>
-              </div>
+            <div class="col-md-3 col-sm-4">
+                <div class="product">
+                    <div class="image">
+                        <a href="product4.html">
+                            <img src="image/product4.jpg" alt="" class="img-responsive image1">
+                        </a>
+                    </div>
+                    <!-- /.image -->
+                    <div class="text">
+                        <h3><a href="product4.html">Marketing 4th Edition</a></h3>
+                        <p class="price"> $43.00</p>
 
+                    </div>
+                    <!-- /.text -->
+
+
+
+                    <div class="ribbon new">
+                        <div class="theribbon">NEW </div>
+                        <div class="ribbon-background"></div>
+                    </div>
+                    <!-- /.ribbon -->
+                </div>
+                <!-- /.product -->
+            </div>
+
+            <div class="col-md-3 col-sm-4">
+                <div class="product">
+                    <div class="image">
+                        <a href="sproduct2.html">
+                            <img src="image/product2.jpg" alt="" class="img-responsive image1">
+                        </a>
+                    </div>
+                    <!-- /.image -->
+                    <div class="text">
+                        <h3><a href="product2.html">Strategic Management</a></h3>
+                        <p class="price">$20.00</p>
+
+
+                    </div>
+                    <!-- /.text -->
+                </div>
+                <!-- /.product -->
+            </div>
+
+            <div class="col-md-3 col-sm-4">
+                <div class="product">
+                    <div class="image">
+                        <a href="product3.html">
+                            <img src="image/product3.jpg" alt="" class="img-responsive image1">
+                        </a>
+                    </div>
+                    <!-- /.image -->
+                    <div class="text">
+                        <h3><a href="product3.html">Supply chain Management</a></h3>
+                        <p class="price">$28.00</p>
+                        <p class="buttons">
+                            <a href="shop-detail.html" class="btn btn-default">View detail</a>
+                        </p>
+
+                    </div>
+                    <!-- /.text -->
+                </div>
+                <!-- /.product -->
+            </div>
+
+            <div class="col-md-3 col-sm-4">
+                <div class="product">
+                    <div class="image">
+                        <a href="product5.html">
+                            <img src="image/product5.jpg" alt="" class="img-responsive image1">
+                        </a>
+                    </div>
+                    <!-- /.image -->
+                    <div class="text">
+                        <h3><a href="product5.html">The Object Primer: Agile Model-Driven Development </a></h3>
+                        <p class="price"> $13.00</p>
+
+                    </div>
+                    <!-- /.text -->
+
+
+
+
+
+                </div>
+                <!-- /.product -->
+            </div>
+
+            <div class="col-md-3 col-sm-4">
+                <div class="product">
+                    <div class="image">
+                        <a href="product6.html">
+                            <img src="image/product6.jpg" alt="" class="img-responsive image1">
+                        </a>
+                    </div>
+                    <!-- /.image -->
+                    <div class="text">
+                        <h3><a href="product6.html">Financial Accounting: An Introduction to Concepts, Methods and Uses</a></h3>
+                        <p class="price">$40.00</p>
+
+
+                    </div>
+                    <!-- /.text -->
+
+                    <div class="ribbon new">
+                        <div class="theribbon">NEW</div>
+                        <div class="ribbon-background"></div>
+                    </div>
+                    <!-- /.ribbon -->
+                </div>
+                <!-- /.product -->
+            </div>
+
+            <div class="col-md-3 col-sm-4">
+                <div class="product">
+                    <div class="image">
+                        <a href="product7.html">
+                            <img src="image/product7.jpg" alt="" class="img-responsive image1">
+                        </a>
+                    </div>
+                    <!-- /.image -->
+                    <div class="text">
+                        <h3><a href="product7.html">The C++ Programming Language, 4th Edition</a></h3>
+                        <p class="price">$23.00</p>
+                        <p class="buttons">
+                            <a href="shop-detail.html" class="btn btn-default">View detail</a>
+
+                        </p>
+
+                    </div>
+                    <!-- /.text -->
+
+                    <div class="ribbon new">
+                        <div class="theribbon">NEW</div>
+                        <div class="ribbon-background"></div>
+                    </div>
+                    <!-- /.ribbon -->
+                </div>
+                <!-- /.product -->
+            </div>
+
+            <div class="col-md-3 col-sm-4">
+                <div class="product">
+                    <div class="image">
+                        <a href="product8.html">
+                            <img src="image/product8.jpg" alt="" class="img-responsive image1">
+                        </a>
+                    </div>
+                    <!-- /.image -->
+                    <div class="text">
+                        <h3><a href="product8.html">Information Technology Project Management, Revised 7th Edition</a></h3>
+                        <p class="price">$143.00</p>
+
+
+                    </div>
+                    <!-- /.text -->
+                </div>
+                <!-- /.product -->
+            </div>
+            <!-- /.col-md-4 -->
+        </div>
+        <!-- /.products -->
+
+        <div class="col-sm-12">
+
+
+            <div class="pages">
+
+                <p class="loadMore">
+                    <a href="#" class="btn btn-template-main"><i class="fa fa-chevron-down"></i> Load more</a>
+                </p>
+
+                <ul class="pagination">
+                    <li><a href="#">&laquo;</a>
+                    </li>
+                    <li class="active"><a href="#">1</a>
+                    </li>
+                    <li><a href="#">2</a>
+                    </li>
+                    <li><a href="#">3</a>
+                    </li>
+                    <li><a href="#">4</a>
+                    </li>
+                    <li><a href="#">5</a>
+                    </li>
+                    <li><a href="#">&raquo;</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <!-- /.col-sm-12 -->
 </div>
 </div>
 
